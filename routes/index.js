@@ -11,7 +11,7 @@ function sleep(milliseconds) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  sleep(2000)
+  sleep(60000)
   res.render('index', { title: 'Express' });
 });
 
