@@ -1,10 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+router.get('/', function(req, res, next) {
+  sleep(2000)
+  res.render('index', { title: 'Express' });
+});
 
 
 // import { LoremIpsum } from 'lorem-ipsum';

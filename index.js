@@ -2,14 +2,6 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
-
 var LoremIpsum = require('lorem-ipsum').LoremIpsum;
 
 var lorem = new LoremIpsum({
@@ -24,7 +16,6 @@ var lorem = new LoremIpsum({
 });
 
 app.get('/', (req, res) => {
-  sleep(2000)
   res.send(lorem.generateParagraphs(7))
 }
 
